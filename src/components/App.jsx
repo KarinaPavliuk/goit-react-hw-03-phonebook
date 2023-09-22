@@ -17,9 +17,10 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    const contactsArr = JSON.parse(localStorage.getItem('contacts'));
-    console.log(contactsArr);
-    //return this.setState({ [this.state.contacts]: [{ contactsArr }] });
+    const localData = localStorage.getItem('contacts');
+    if (localData) {
+      this.setState({ contacts: JSON.parse(localData) });
+    }
   }
 
   componentDidUpdate(_, prevState) {
