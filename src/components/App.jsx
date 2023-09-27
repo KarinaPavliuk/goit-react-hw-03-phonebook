@@ -21,6 +21,7 @@ export class App extends Component {
     if (localData) {
       this.setState({ contacts: JSON.parse(localData) });
     }
+    return;
   }
 
   componentDidUpdate(_, prevState) {
