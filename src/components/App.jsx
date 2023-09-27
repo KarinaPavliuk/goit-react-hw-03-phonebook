@@ -18,10 +18,10 @@ export class App extends Component {
 
   componentDidMount() {
     const localData = localStorage.getItem('contacts');
-    if (localData) {
-      this.setState({ contacts: JSON.parse(localData) });
+    if (!localData) {
+      return;
     }
-    return;
+    this.setState({ contacts: JSON.parse(localData) });
   }
 
   componentDidUpdate(_, prevState) {
